@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --primary-color: #ff4c24;
+  --secondary-color: #ffa07a;
+  --accent-color: #ffd700;
+
+  /* Light theme */
+  --light-bg: #f8f9fa;
+  --light-text: #333333;
+  --light-card-bg: #ffffff;
+  --light-card-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Dark theme */
+  --dark-bg: #121212;
+  --dark-text: #f8f9fa;
+  --dark-card-bg: #1e1e1e;
+  --dark-card-shadow: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  min-height: 100vh;
+  margin-top: 12vh;
+  position: relative;
+}
+
+body.light-theme {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+body.dark-theme {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-body {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Square shapes instead of circles */
+.circle-shape {
+  position: absolute;
+  border-radius: 10px; /* Changed from 50% to 10px for square with rounded corners */
+  z-index: 0;
+  filter: blur(50px);
+}
+
+.circle-shape-1 {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 76, 36, 0.2);
+  top: 10%;
+  left: -5%;
+}
+
+.circle-shape-2 {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 215, 0, 0.15);
+  bottom: 20%;
+  right: -5%;
+}
+
+.circle-shape-3 {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 160, 122, 0.15);
+  top: 40%;
+  right: 20%;
+}
+
+.dark-theme .circle-shape-1 {
+  background-color: rgba(255, 76, 36, 0.1);
+}
+
+.dark-theme .circle-shape-2 {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.dark-theme .circle-shape-3 {
+  background-color: rgba(255, 160, 122, 0.1);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 80%; /* Changed from 50% to 10px for square with rounded corners */
+  transition: background-color 0.3s;
+}
+
+.light-theme .theme-toggle {
+  color: var(--light-text);
+}
+
+.light-theme .theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .theme-toggle {
+  color: var(--dark-text);
+}
+
+.dark-theme .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Original price styling for discounted items */
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.85em;
+  margin-right: 5px;
+}
+
+.discount-badge {
+  background-color: #ff4c24;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Logo styling */
+.logo {
+  max-height: 60px;
+  width: auto;
+}
+
+/* Cart icon styling */
+.cart-icon {
+  width: 24px;
+  height: 24px;
+}
+
